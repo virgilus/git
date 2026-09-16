@@ -33,7 +33,7 @@ preprocess.py
 
 1. Add your github username to this google document so the teacher can add you as a collaborator to the repo:
 
-https://docs.google.com/document/d/1LMmGRbgk8etWKchOmu3ba-pqWMZIMrRFS-GILj9D7vE/edit?usp=sharing
+https://lite.framacalc.org/977aeccrpq-anjz
 
 2. Clone the repository to your local machine:
 
@@ -61,7 +61,7 @@ echo "4,YourName,24,85" >> dataset.csv
 
 But you can also open the file in a text editor and add your line manually.
 
-1. Edit the script
+5. Edit the script
 
 Open preprocess.py and add one extra line of code (for example, a statistic or message).
 
@@ -72,12 +72,30 @@ Example:
 print("Average score:", df["score"].mean())
 ```
 
-Commit your changes:
+6. Edit secrets.txt
+
+Add a secret message to secrets.txt. Whatever you want!
+Then make sure your .gitignore file is configured to ignore this file so it won't be commited to the repository. You can check if it's ignored by running:
+
+```bash
+git status
+```
+
+7. Edit data/big_data.txt and a file inside the data folder
+
+Add a line to data/big_data.txt. Again, whatever you want!
+And create a new file inside the data folder and add some content to it. For example, create a file named `data/my_data.txt` and add some text to it.
+
+Then make sure your .gitignore file is configured to ignore all files inside the data folder so they won't be commited to the repository.
+
+8. Commit your changes:
 
 ```bash
 git add .
 git commit -m "Adds my data and code"
 ```
+
+(Usually using git add . is not a good idea, but for this exercise, it's ok.)
 
 Push your branch. The first time you do this, you may need to set the upstream branch. Follow what the terminal suggests which will be something like `git push --set-upstream origin <your-github-username>`.
 
@@ -148,9 +166,11 @@ Your contribution is considered successful if:
 
 - Your name appears correctly in dataset.csv
 - Your code line is added to preprocess.py
+- **You didn't erase anyone else's data or code**
 - You have resolved any merge conflicts successfully
 - Your Pull Request is merged into the main repository
 - The secrets.txt file was ignored by Git and wasn't committed
+- The data folder was ignored by Git and wasn't committed
 
 **🧠 Tips**
 
