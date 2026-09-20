@@ -28,6 +28,8 @@ Your task is to:
 README.md
 dataset.csv
 preprocess.py
+secrets.txt
+data/big_data.txt
 
 ## 🧩 Instructions
 
@@ -53,7 +55,7 @@ git checkout -b <your-github-username>
 4. Edit the dataset
 
 Add a new line to dataset.csv with your own data.
-Example:
+Example (using the function echo to append a line to the file):
 
 ```bash
 echo "4,YourName,24,85" >> dataset.csv
@@ -63,7 +65,7 @@ But you can also open the file in a text editor and add your line manually.
 
 5. Edit the script
 
-Open preprocess.py and add one extra line of code (for example, a statistic or message).
+Open preprocess.py and add one extra line of code to create a new statistic from the dataset.
 
 Example:
 
@@ -80,6 +82,8 @@ Then make sure your .gitignore file is configured to ignore this file so it won'
 ```bash
 git status
 ```
+
+So the goal here is that the secrets.txt file is **not tracked by git** and won't be pushed to the remote repository.
 
 7. Edit data/big_data.txt and a file inside the data folder
 
@@ -146,16 +150,6 @@ git push
 ```
 
 Go back to the GitHub website and update your PR — it should now merge cleanly.
-
-## 🔒 Ignoring Sensitive Files
-
-### Secrets.txt
-
-There's a file named "secrets.txt" in the repository. Make sure this file is included in your `.gitignore` so that it is not tracked by Git. Data scientists often use this kind of file to store sensitive information they might need for their project, such as API keys or passwords.
-
-### Data folder
-
-Most of the time, large datasets should not be committed to Git repositories. If you have a folder named "data" that contains large files, ensure that this folder is also included in your `.gitignore` file.
 
 ## Done? 🎉
 

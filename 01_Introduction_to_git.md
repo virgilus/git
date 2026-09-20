@@ -1,6 +1,8 @@
 # 🧩 Git Basics – Quick Reference
 
-This short guide covers the **essential Git commands** you'll need for the collaborative exercise.
+This short guide covers the **essential Git commands** you'll need for the next exercises.
+
+This course only use markdown files, so you don't need to download it and you can just read it from your browser.
 
 ---
 
@@ -25,9 +27,26 @@ To create an SSH key pair follow this tutorial.
 
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
-If it asks for a passphrase, you can leave it empty for convenience.
+**A few important notes:**
 
-Also the first time you connect to GitHub via SSH, it will ask you to confirm the authenticity of the host. Type "yes" to continue.
+- Make sure you use the right command line that generates the key according to github's latest instructions. As of 2026, the algorithm is ed25519 (not rsa anymore).
+
+- When you generate your keys using the terminal, it may ask for a passphrase, leave it empty for convenience (so just press enter three times).
+
+- Whether you're using Windows, macOS, or Linux, your SSH keys will normally be stored in the `~/.ssh` directory. The **public key** is typically stored in a file named `id_ed25519.pub` (or a similar filename), while the **private key** is stored in `id_ed25519`. **Never share your private key with anyone.**
+
+  **Note for Windows users:** the `.pub` extension may be displayed as a *Publisher file*, but it is just a text file.
+
+
+- If you want to display your public key, you can use the following command in your terminal:
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+It should work on the power shell, git bash, or any terminal on Linux or Mac. 
+
+- Also the first time you connect to GitHub via SSH, it will ask you to confirm the authenticity of the host. Type "yes" to continue.
 
 
 ## 📋 Basic Git Workflow
