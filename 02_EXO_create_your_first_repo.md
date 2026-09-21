@@ -27,12 +27,12 @@ There are two ways to create a new repository :
 > Initializing the repository with a README file means that the repository will not be empty because one file will be created. It is easier to manipulate.
 
    - Choose a license (optional).
-   - Choose a the python .gitignore template.
+   - Choose the python .gitignore template.
 
 1. **Copy the SSH URL**:
    Once the repository is created, you will be redirected to the repository page. You will see a green button that says "Code". Click on it and copy the SSH URL (it should look like `git@github.com:username/my_first_repo.git`).
 
-1. **Clone the repository**:
+2. **Clone the repository**:
    Open your terminal (Linux/MacOS) or Git Bash (Windows) and navigate to the directory where you want to clone the repository. You don't have to create a new directory, git will do it for you. If you have "code" directory, you can just go to "code" and run the following command (of course, replace `<SSH_URL>` with the SSH URL you copied in the previous step):
 
    ```bash
@@ -42,6 +42,9 @@ There are two ways to create a new repository :
 > It is a good practice to have a "code" directory where you put all your code projects. Make sure this repo is not in the scope of tools such as Google Drive, OneDrive, Dropbox, ICloud, etc. because they can interfere with git. A common place is `~/code` on Linux/MacOS or `C:\Users\<username>\code` on Windows.
 
    Nice! You have just created your first repository on github.com and cloned it to your computer. Now you can start working on your project!
+
+> [!TIP]
+> If you are struggling with ssh keys, you can use the HTTPS URL instead of the SSH URL.
 
 1. **Navigate to the cloned repository**:
    Once the repository is cloned, navigate to the newly created directory:
@@ -57,7 +60,7 @@ There are two ways to create a new repository :
    ```
    But, of course, you can also just launch VSCode and open the folder manually (File > Open Folder... or ctrl+K ctrl+O).
 
-1. **Create a new file**:
+2. **Create a new file**:
    Create a new file called `hello.py` and add the following code:
 
    ```python
@@ -203,9 +206,35 @@ There are two ways to create a new repository :
 
    This will create a new branch on the remote repository with the same name as your local branch. Once you've run this command once, you can just run `git push` in the future to push changes to the same branch.
 
+## Make a modification on the main branch
+
+Now that you have made changes to the `hello.py` file on the `my_new_branch` branch, let's switch back to the main branch and make a modification to the `hello.py` file. This will create a conflict when we try to merge the changes from the `my_new_branch` branch to the main branch.
+
+```bash
+git checkout main
+```
+
+Now edit the file `hello.py` to print "Hello from the main branch!" instead of "Hello, this line has been added from the main branch!". For example:
+
+```python
+print("Hello from the main branch!")
+```
+
+Then, add and commit the changes using the following commands:
+
+```bash
+git add hello.py
+git commit -m "Modified hello.py on the main branch"
+git push
+```
+
+It's time to create conflict!
+
 ## Merge the changes back to the main branch
 
-You have two main options to merge the changes back to the main branch: you can either create a pull request on github.com or you can merge the changes locally and then push them to the remote repository. In this exercise, we will use the method we've seen in the first chapter and let github doing it for us. (Open the image in a new tab to see it better.)
+You have two main options to merge the changes back to the main branch: you can either create a pull request on github.com or you can merge the changes locally and then push them to the remote repository.
+
+In this exercise, we will use the method we've seen in the first chapter and let github doing it for us. (Open the image in a new tab to see it better.)
 
 1. **Create a pull request**:
    Go to your repository on github.com and you should see a message saying "Compare & pull request". Click on it and then click on the "Create pull request" button. You can add a description of the changes you made and then click on the "Create pull request" button again.
